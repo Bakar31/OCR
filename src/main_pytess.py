@@ -20,9 +20,9 @@ def draw_box(file):
             (x, y, w, h) = (d['left'][i], d['top'][i], d['width'][i], d['height'][i])
             dilate_img = cv2.rectangle(dilate_img, (x, y), (x + w, y + h), (0, 255, 0), 3)
 
-    up_width = 400
-    up_height = 600
-    up_points = (up_width, up_height)
+    width = 400
+    height = 600
+    up_points = (width, height)
     resized = cv2.resize(dilate_img, up_points, interpolation= cv2.INTER_LINEAR)
     filename = 'Output\\pytesseract\\'+ file
     cv2.imwrite(filename, resized)
